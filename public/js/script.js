@@ -1,3 +1,5 @@
+const moment = require('moment-timezone');
+
 let selectedPaymentMethod = "applepay";
 let selectedAction = "payment";
 
@@ -590,8 +592,9 @@ function updateJSON(methodOrAction, clickedButton, type) {
 
         }
     }
+    const dateObj = new Date();
 
-    updatedJSON.payment_timestamp = new Date().toISOString();
+    updatedJSON.payment_timestamp = moment(dateObj).tz("America/Los_Angeles").format('YYYY-MM-DD HH:mm:ss Z');
     updatedJSON.timestamp = Math.floor(Date.now() / 1000).toString();
     updatedJSON.signature = randomString(64);
     

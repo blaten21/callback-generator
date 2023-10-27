@@ -31,7 +31,6 @@ app.get('/validate', (req, res) => {
         ext_nsf_amount: "0",
         ext_account_type: "ib",
         ext_account_balance: "8,648.50",
-        ext_next_payment_due_date: "11/26/23",
         ext_gap_premium_amount: "0",
         ext_gap_refunded: "True",
         ext_total_late_charges: "0"

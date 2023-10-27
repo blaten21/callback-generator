@@ -10,8 +10,7 @@ app.use(express.static('public'));
 // Set up a POST route at the /confirmation path
 app.get('/validate', (req, res) => {
   // Respond with a static JSON template
-  res.json({data: {
-    order_validation_response: {
+  res.json({order_validation_response: {
       approval: "go",
       version: "3.0",
       parameters: {
@@ -37,7 +36,7 @@ app.get('/validate', (req, res) => {
         ext_gap_refunded: "True",
         ext_total_late_charges: "0"
       }
-    }
+    
   }});
 });
 

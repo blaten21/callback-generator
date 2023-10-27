@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Set up a POST route at the /confirmation path
-app.get('/confirm', (req, res) => {
+app.get('/validate', (req, res) => {
   // Respond with a static JSON template
   res.json({data: {
     order_validation_response: {
@@ -17,14 +17,14 @@ app.get('/confirm', (req, res) => {
       parameters: {
         site_order_identifier: "0001469524526",
         site_customer_identifier: "00014695",
-        ext_chargeoff_flag: "true",
-        ext_chapter_7_flag: "true",
-        ext_discharge_flag: "true",
+        ext_chargeoff_flag: "false",
+        ext_chapter_7_flag: "false",
+        ext_discharge_flag: "false",
         ext_reaffirmation_flag: "false",
         ext_chapter_11_flag: "false",
         ext_chapter_13_flag: "false",
         ext_bankruptcy_plan_flag: "false",
-        ext_litigation_flag: "true",
+        ext_litigation_flag: "false",
         ext_foreclosure_flag: "false",
         ext_pending_repo_flag: "false",
         ext_repo_security_flag: "false",

@@ -10,11 +10,35 @@ app.use(express.static('public'));
 // Set up a POST route at the /confirmation path
 app.get('/confirm', (req, res) => {
   // Respond with a static JSON template
-  res.json({
-    status: 'success',
-    message: 'What do you want to respond with?'
-    // ... any other key-value pairs you want to send in the template
-  });
+  res.json({data: {
+    order_validation_response: {
+      approval: "go",
+      version: "3.0",
+      parameters: {
+        site_order_identifier: "0001469524526",
+        site_customer_identifier: "00014695",
+        ext_chargeoff_flag: "true",
+        ext_chapter_7_flag: "true",
+        ext_discharge_flag: "true",
+        ext_reaffirmation_flag: "false",
+        ext_chapter_11_flag: "false",
+        ext_chapter_13_flag: "false",
+        ext_bankruptcy_plan_flag: "false",
+        ext_litigation_flag: "true",
+        ext_foreclosure_flag: "false",
+        ext_pending_repo_flag: "false",
+        ext_repo_security_flag: "false",
+        ext_fraud_flag: "false",
+        ext_nsf_amount: "0",
+        ext_account_type: "ib",
+        ext_account_balance: "8,648.50",
+        ext_next_payment_due_date: "11/26/23",
+        ext_gap_premium_amount: "0",
+        ext_gap_refunded: "True",
+        ext_total_late_charges: "0"
+      }
+    }
+  }});
 });
 
 const PORT = process.env.PORT || 3000;

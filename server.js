@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Set up a POST route at the /confirmation path
-app.post('/confirm', (req, res) => {
+app.get('/confirm', (req, res) => {
   // Respond with a static JSON template
   res.json({
     status: 'success',
